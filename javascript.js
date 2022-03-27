@@ -1,25 +1,31 @@
 console.log("Hello World!");
 
+let playerSelection = prompt("Rock, Paper, or Scissors?","");
+
 function random() {
     let randomNumber = Math.floor(Math.random()*3) + 1;
     return randomNumber
 }
 
+let computerSelection;
 function computerPlay() {
     if (random() == 1 ) {
-        return "Rock"
+        computerSelection = "Rock";
     } else if (random() == 2) {
-        return "Paper"
+        computerSelection = "Paper";
     }
-    return "Scissors"
+    computerSelection = "Scissors";
 }
 
-console.log(computerPlay())
-
-let playerSelection = prompt("Rock, Paper, or Scissors?","");
-
-function playRound(playerSelection,computerPlay) {
-    if (playerSelection === "Rock" && computerPlay === "Paper") {
+function playRound(playerSelection,computerSelection) {
+    if ( (playerSelection === "Rock" && computerSelection === "Paper") || 
+    (playerSelection === "Paper" && computerSelection === "Scissors") || 
+    (playerSelection === "Scissors" && computerSelection=== "Rock") ) {
         alert("Computer Wins");
+    } else if (playerSelection === computerSelection) {
+        alert ("Tie");
     }
+    alert ("Player Wins")
 }
+
+alert (playRound(playerSelection, computerSelection));
