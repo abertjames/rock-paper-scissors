@@ -7,25 +7,25 @@ function random() {
     return randomNumber
 }
 
-let computerSelection;
+
 function computerPlay() {
     if (random() == 1 ) {
-        computerSelection = "Rock";
+        return "Rock";
     } else if (random() == 2) {
-        computerSelection = "Paper";
+        return "Paper";
     }
-    computerSelection = "Scissors";
+    return "Scissors";
 }
 
-function playRound(playerSelection,computerSelection) {
-    if ( (playerSelection === "Rock" && computerSelection === "Paper") || 
-    (playerSelection === "Paper" && computerSelection === "Scissors") || 
-    (playerSelection === "Scissors" && computerSelection=== "Rock") ) {
+function playRound(playerSelection,computerPlay) {
+    if ( (playerSelection === "Rock" && computerPlay === "Paper") || 
+    (playerSelection === "Paper" && computerPlay === "Scissors") || 
+    (playerSelection === "Scissors" && computerPlay=== "Rock") ) {
         alert("Computer Wins");
-    } else if (playerSelection === computerSelection) {
+    } else if (playerSelection === computerPlay) {
         alert ("Tie");
     }
     alert ("Player Wins")
 }
 
-alert (playRound(playerSelection, computerSelection));
+alert (playRound(playerSelection, computerPlay));
