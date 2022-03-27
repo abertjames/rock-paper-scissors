@@ -1,4 +1,5 @@
-let playerSelection = prompt("Rock, Paper, or Scissors?","");
+let input = prompt("Rock, Paper, or Scissors?","");
+let playerSelection = input.toLowerCase();
 
 function random() {
     let randomNumber = Math.floor(Math.random()*3) + 1;
@@ -8,21 +9,24 @@ function random() {
 
 function computerPlay() {
     if (random() == 1 ) {
-        return "Rock";
+        return "rock";
     } else if (random() == 2) {
-        return "Paper";
+        return "paper";
     }
-    return "Scissors";
+    return "scissors";
 }
 
-console.log(computerPlay());
+let computerSelection = computerPlay();
+
+console.log(computerSelection);
+console.log(playerSelection);
 
 function playRound(x,y) {
-    if (x === "Rock" && y === "Paper") {
+    if (x === "rock" && y === "paper") {
         return "Computer Wins"
-    } else if (x === "Paper" && y === "Scissors") {
+    } else if (x === "paper" && y === "scissors") {
         return "Computer Wins"
-    } else if (x === "Scissors" && y === "Rock") {
+    } else if (x === "scissors" && y === "rock") {
         return "Computer Wins"
     } else if (x === y) {
         return "Tie"
@@ -30,5 +34,5 @@ function playRound(x,y) {
      return "Player Wins"
 }
 
-alert (playRound(playerSelection, computerPlay()));
+alert (playRound(playerSelection, computerSelection));
 
