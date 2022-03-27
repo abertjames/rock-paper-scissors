@@ -47,6 +47,7 @@ function game() {
         } else if (playRound == "Tie") {
             tie += 1;
         }
+        
     }
     return (`Player won: ${playerWins}, Computer won: ${computerWins}, Ties: ${tie}`)
 
