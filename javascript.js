@@ -1,36 +1,39 @@
-let playerSelection = prompt("Rock, Paper, or Scissors?","").toLowerCase();
-
-function random() {
-    let randomNumber = Math.floor(Math.random()*3) + 1;
-    return randomNumber
+let playerSelection;
+function playerSelect (){
+    return playerSelection = prompt("Rock, Paper, or Scissors?","").toLowerCase();
 }
 
+let randomNumber;
+function random() {
+    return randomNumber = Math.floor(Math.random()*3) + 1;
+}
 
+let computerSelection = computerPlay();
 function computerPlay() {
-    if (random() == 1 ) {
+    random();
+    if (randomNumber == 1 ) {
         return "rock";
-    } else if (random() == 2) {
+    } else if (randomNumber == 2) {
         return "paper";
     }
     return "scissors";
 }
 
-let computerSelection = computerPlay();
+// console.log(playerSelection);
+// console.log(computerSelection);
 
-console.log(playerSelection);
-console.log(computerSelection);
-
-function playRound(x,y) {
-    if (x === "rock" && y === "paper") {
-        return "Computer Wins"
-    } else if (x === "paper" && y === "scissors") {
-        return "Computer Wins"
-    } else if (x === "scissors" && y === "rock") {
-        return "Computer Wins"
-    } else if (x === y) {
-        return "Tie"
+let roundWinner;
+function playRound(playerSelection,computerSelection) {
+    if (playerSelection === "rock" && computerSelection === "paper") {
+        return roundWinner = "Computer Wins"
+    } else if (playerSelection === "paper" && computerSelection === "scissors") {
+        return roundWinner = "Computer Wins"
+    } else if (playerSelection === "scissors" && computerSelection === "rock") {
+        return roundWinner = "Computer Wins"
+    } else if (playerSelection === computerSelection) {
+        return roundWinner = "Tie"
     } else
-     return "Player Wins"
+     return roundWinner = "Player Wins"
 }
 
 function game() {
@@ -38,13 +41,13 @@ function game() {
     let computerWins = 0;
     let tie = 0;
 
-    for (let i = 0; i <= 5; i++) {
-        playRound(playerSelection,computerSelection);
-        if (playRound == "Computer Wins") {
+    for (let i = 0; i < 5; i++) {
+        playRound(playerSelect(),computerPlay());
+        if (roundWinner == "Computer Wins") {
             computerWins += 1;
-        } else if (playRound == "Player Wins") {
+        } else if (roundWinner == "Player Wins") {
             playerWins += 1;
-        } else if (playRound == "Tie") {
+        } else if (roundWinner == "Tie") {
             tie += 1;
         }
         
