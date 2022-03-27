@@ -1,5 +1,3 @@
-console.log("Hello World!");
-
 let playerSelection = prompt("Rock, Paper, or Scissors?","");
 
 function random() {
@@ -17,15 +15,20 @@ function computerPlay() {
     return "Scissors";
 }
 
+console.log(computerPlay());
+
 function playRound(playerSelection,computerPlay) {
-    if ( (playerSelection === "Rock" && computerPlay === "Paper") || 
-    (playerSelection === "Paper" && computerPlay === "Scissors") || 
-    (playerSelection === "Scissors" && computerPlay=== "Rock") ) {
+    if (playerSelection === "Rock" && computerPlay === "Paper") {
+        alert("Computer Wins");
+    } else if (playerSelection === "Paper" && computerPlay === "Scissors") {
+        alert("Computer Wins");
+    } else if (playerSelection === "Scissors" && computerPlay === "Rock") {
         alert("Computer Wins");
     } else if (playerSelection === computerPlay) {
         alert ("Tie");
-    }
+    } else
     alert ("Player Wins")
 }
 
 alert (playRound(playerSelection, computerPlay));
+
