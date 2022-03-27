@@ -17,18 +17,18 @@ function computerPlay() {
 
 console.log(computerPlay());
 
-function playRound(playerSelection,computerPlay) {
-    if (playerSelection === "Rock" && computerPlay === "Paper") {
-        alert("Computer Wins");
-    } else if (playerSelection === "Paper" && computerPlay === "Scissors") {
-        alert("Computer Wins");
-    } else if (playerSelection === "Scissors" && computerPlay === "Rock") {
-        alert("Computer Wins");
-    } else if (playerSelection === computerPlay) {
-        alert ("Tie");
+function playRound(x,y) {
+    if (x === "Rock" && y === "Paper") {
+        return "Computer Wins"
+    } else if (x === "Paper" && y === "Scissors") {
+        return "Computer Wins"
+    } else if (x === "Scissors" && y === "Rock") {
+        return "Computer Wins"
+    } else if (x === y) {
+        return "Tie"
     } else
-    alert ("Player Wins")
+     return "Player Wins"
 }
 
-alert (playRound(playerSelection, computerPlay));
+alert (playRound(playerSelection, computerPlay()));
 
